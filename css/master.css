@@ -1,0 +1,43 @@
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #0984e3;
+}
+
+body {
+  font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+button.primary {
+  background-color: white;
+}
+
+.margin-t100{
+  margin-top: 100px;
+}
+
+.align-centered{
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.container {
+  margin-top: 40px;
+}
+
+.number-holder {
+  text-align: center;
+}
+
+.big-number {
+  color: white;
+  font-size: 40px;
+}
