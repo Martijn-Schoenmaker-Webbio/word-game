@@ -14,22 +14,36 @@ $(document).ready(function() {
 
     getValues(2);
 
-    for ( i = 0; i < 2; i++) {
-      rand = Math.floor(Math.random() * 5);
-      firstNumber.text(data[0].options[rand]);
-    }
-
   }
 
   function getValues(amount) {
     var words = [];
-    var randomOption = Math.floor(Math.random() * data.length);
+    var optionAmount = data.length;
+    var randomOptionAmount = Math.floor(Math.random() * data.length);
+    var randomWordAmount;
+    var previousWord;
+    var isSame = false;
     for ( i = 0; i < amount; i++) {
-      
-      randomWord = Math.floor(Math.random() * data[randomOption]);
-      firstNumber.text(data[0].options[rand]);
+      if (randomWordAmount == null) {
+        randomWordAmount = Math.floor(Math.random() * data[randomOptionAmount].options.length);
+        previousWord = randomWordAmount;
+      } else{
+        randomWordAmount = Math.floor(Math.random() * data[randomOptionAmount].options.length);
+        if (previousWord === randomWordAmount) {
+          isSame = true;
+        }
+      }
+      var randomWord = data[randomOptionAmount].options[randomWordAmount];
+      words.push(randomWord);
     }
-    return words;
+
+    // alert(words);
+    // alert(isSame);
+
+    return {
+      words: words,
+      isSame: isSame
+    };
   }
 
 });
